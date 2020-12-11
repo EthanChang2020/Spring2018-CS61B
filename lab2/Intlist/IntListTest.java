@@ -12,6 +12,16 @@ public class IntListTest {
 
     @Test
     public void testList() {
+
+
+
+
+
+
+
+
+
+
         IntList one = new IntList(1, null);
         IntList twoOne = new IntList(2, one);
         IntList threeTwoOne = new IntList(3, twoOne);
