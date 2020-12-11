@@ -81,13 +81,21 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-            
-            IntList tem = A;
-            while(tem.rest != null)
+            if(A == null)
             {
-                tem = tem.rest;
+                return B;
             }
-            tem.rest = B;
+
+            else if( B != null)
+            {
+                IntList temp = A;
+                while(temp.rest != null)
+                {
+                    temp = temp.rest;
+                }
+                temp.rest = B;
+            }
+
             return A;
 
         }
@@ -98,17 +106,37 @@ public class IntList {
          */
         public static IntList catenate(IntList A, IntList B){
 
-            IntList newA = new IntList(A.first, null);
-            IntList res = newA;
-            IntList tempA = A.rest;
-            while(tempA != null)
+            if(A == null)
             {
-                res.rest =  new IntList(tempA.first, null);
-                res = res.rest;
-                tempA = tempA.rest;
+                IntList newB = new IntList(B.first, null);
+                IntList resB = newB;
+                IntList tempB = B.rest;
+                while(tempB != null)
+                {
+                    resB.rest = new IntList(tempB.first, null);
+                    resB = resB.rest;
+                    tempB = tempB.rest;
+                }
+                return newB;
             }
-            res.rest = B;
-            return newA;
+
+            else {
+
+                IntList newA = new IntList(A.first, null);
+                IntList resA = newA;
+                IntList tempA = A.rest;
+                while (tempA != null) {
+                    resA.rest = new IntList(tempA.first, null);
+                    resA = resA.rest;
+                    tempA = tempA.rest;
+                }
+
+                if (B != null) {
+                    resA.rest = B;
+                }
+
+                return newA;
+            }
 
     }
 
