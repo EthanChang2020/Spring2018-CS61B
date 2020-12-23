@@ -18,7 +18,7 @@ public class NBody{
 
 		for(int row = 0; row < numberOfPlanets; row++)
 		{
-			planets[row] =  new Planet();
+			planets[row] =  new Planet(0, 0, 0, 0, 0, null);
 			
 			planets[row].xxPos = in.readDouble();
 			planets[row].yyPos = in.readDouble();

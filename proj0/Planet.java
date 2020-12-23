@@ -31,6 +31,7 @@ public class Planet{
 		imgFileName = p.imgFileName;
 	}
 	
+	/*
 	public Planet()
 	{
 		xxPos = 0;
@@ -40,7 +41,7 @@ public class Planet{
 		mass = 0;
 		imgFileName = null;
 	}
-
+*/
 	public double calcDistance(Planet target)
 	{
 		double distance = (target.xxPos - this.xxPos) * (target.xxPos - this.xxPos) 
