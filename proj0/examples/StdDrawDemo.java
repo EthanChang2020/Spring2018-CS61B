@@ -11,7 +11,7 @@
 
 public class StdDrawDemo {
 	public static String imageToDraw = "advice.png";
-
+	
 	/* Draws three copies of the image in a rectangular pattern. */
 	public static void drawThree() {
 		/** Sets up the universe so it goes from 
@@ -75,7 +75,6 @@ public class StdDrawDemo {
 		  * what happens!). */
 		StdDraw.enableDoubleBuffering();
 
-
 		double size = 100;
 		while (size < 500) {
 			StdDraw.clear();
@@ -96,8 +95,8 @@ public class StdDrawDemo {
 
 	public static void main(String[] args) {
 		
-		drawThree();
-		drawRandom();
+		//drawThree();
+		//drawRandom();
 		drawZoom();
 	}
 } 
