@@ -4,7 +4,7 @@ public class LinkedListDeque<T> {
     private stuffNode sentinel;
 
     private class stuffNode{
-        T item;
+        private T item;
         stuffNode prev;
         stuffNode next;
         public stuffNode(T item,stuffNode prev,stuffNode next){
@@ -70,27 +70,32 @@ public class LinkedListDeque<T> {
         {
             T result = sentinel.next.item;
             sentinel.next = sentinel.next.next;
-            sentinel.next.prev = sentinel;
             size -= 1;
+            
+            if(size == 0){
+                sentinel.prev = sentinel;
+                sentinel.next = sentinel;
+                return result;
+            }
+
+            sentinel.next.prev = sentinel;
             return result;
         }
     }
 
-    public T removeLast(){
-        if(sentinel.next == sentinel && sentinel == sentinel.prev){
+    public T removeLast() {
+        if(sentinel.next == sentinel && sentinel == sentinel.prev) {
             return null;
         }
-        else
-        {
+        else {
             stuffNode p = sentinel;
-            while(p.next != sentinel){
+            while(p.next != sentinel) {
                 p = p.next;
             }
             p.prev.next = sentinel;
             sentinel.prev = p.prev;
             return p.prev.item;
         }
-
     }
 
     public T get(int index){
